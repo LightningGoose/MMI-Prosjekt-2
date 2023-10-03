@@ -1,0 +1,330 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.theater {
+    border: 1px solid #ddd;
+    background-color: #111;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.screen {
+    background-color: #444;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.seats {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    background-color: #777;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.aisle {
+    height: 40px;  /* Adjust the height as needed */
+
+    /* ... (Rest remains the same) */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.preferences {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.highlighted {
+    background-color: #FFD700;  /* Gold color for visibility */
+    border: 2px solid #FF8C00;  /* DarkOrange border */
+    box-shadow: 0px 0px 10px rgba(255, 140, 0, 0.6);  /* Soft shadow to make it pop a bit */
+    transform: scale(1.05);  /* Slightly enlarge the seat for emphasis */
+    transition: all 0.3s ease;  /* Smooth transition for changes */
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000;
+    display: inline-block;
+    margin: 2px;
+    transition: background 0.3s;
+}
+
+/* Individual Categories */
+.golden { background-color: goldenrod; }
+.green { background-color: green; }
+.blue { background-color: blue; }
+.purple { background-color: purple; }
+.red { background-color: red; }
+.cyan { background-color: cyan; }
+
+/* Dual Color Combinations */
+.golden-blue {
+    background-image: linear-gradient(45deg, goldenrod 50%, blue 50%);
+}
+
+.golden-cyan {
+    background-image: linear-gradient(45deg, goldenrod 50%, cyan 50%);
+}
+
+.golden-green {
+    background-image: linear-gradient(45deg, goldenrod 50%, green 50%);
+}
+
+.green-blue {
+    background-image: linear-gradient(45deg, green 50%, blue 50%);
+}
+
+.green-cyan {
+    background-image: linear-gradient(45deg, green 50%, cyan 50%);
+}
+
+.blue-cyan {
+    background-image: linear-gradient(45deg, blue 50%, cyan 50%);
+}
+
+.blue-purple {
+    background-image: linear-gradient(45deg, blue 50%, purple 50%);
+}
+
+.blue-red {
+    background-image: linear-gradient(45deg, blue 50%, red 50%);
+}
+
+.purple-red {
+    background-image: linear-gradient(45deg, purple 50%, red 50%);
+}
+
+.purple-cyan {
+    background-image: linear-gradient(45deg, purple 50%, cyan 50%);
+}
+
+.red-cyan {
+    background-image: linear-gradient(45deg, red 50%, cyan 50%);
+}
+
+/* Triple Color Combinations */
+.golden-blue-cyan {
+    background-image: linear-gradient(45deg, goldenrod 33.33%, blue 33.33%, blue 66.66%, cyan 66.66%);
+}
+
+.golden-green-blue {
+    background-image: linear-gradient(45deg, goldenrod 33.33%, green 33.33%, green 66.66%, blue 66.66%);
+}
+
+.green-blue-cyan {
+    background-image: linear-gradient(45deg, green 33.33%, blue 33.33%, blue 66.66%, cyan 66.66%);
+}
+
+.green-blue-purple {
+    background-image: linear-gradient(45deg, green 33.33%, blue 33.33%, blue 66.66%, purple 66.66%);
+}
+
+.blue-purple-red {
+    background-image: linear-gradient(45deg, blue 33.33%, purple 33.33%, purple 66.66%, red 66.66%);
+}
+
+.purple-red-cyan {
+    background-image: linear-gradient(45deg, 
+                                      purple 33.33%, 
+                                      red 33.33%, red 66.66%, 
+                                      cyan 66.66%);
+}
+
+.golden-green-blue-cyan {
+    background-image: linear-gradient(45deg, 
+                                      goldenrod 25%, 
+                                      green 25%, green 50%, 
+                                      blue 50%, blue 75%, 
+                                      cyan 75%);
+}
+
+
+
+
+.preferences label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px; 
+}
+
+.preferences input[type="checkbox"] {
+    visibility: hidden; /* Hide the default checkbox */
+}
+
+.preferences label::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    transition: all 0.3s;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+}
+
+/* Individual Checkbox Styling */
+#bestSound:checked + label::before {
+    background-color: green;
+}
+
+#bestVisual:checked + label::before {
+    background-color: blue;
+}
+
+#closeToExit:checked + label::before {
+    background-color: cyan;
+}
+
+#vipSeating:checked + label::before {
+    background-color: goldenrod;
+}
+
+#accessibleSeating:checked + label::before {
+    background-color: red;
+}
+
+#quietCorners:checked + label::before {
+    background-color: purple;
+}
+
+
+/* Special Styling for "Uncheck All" Checkbox */
+#uncheckAll + label::before {
+    border-color: #D32F2F;
+    border-width: 2px;
+    position: relative;
+}
+
+#uncheckAll:checked + label::before {
+    background-color: #D32F2F;
+    content: '';
+    position: relative;
+}
+
+#uncheckAll:checked + label::after,
+#uncheckAll:checked + label::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    top: 10px;
+    left: 0;
+    background-color: #FFFFFF;
+}
+
+#uncheckAll:checked + label::after {
+    width: 2px;
+    height: 20px;
+    left: 9px;
+}
+
+#uncheckAll + label {
+    color: #D32F2F;
+}
+
+#uncheckAll + label {
+    padding-left: 0;
+}
+
+.seat-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.seat-selector button {
+    font-size: 18px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.seat-selector span {
+    font-size: 18px;
+}
+
+/* Additional styling for buttons */
+.seat-selector button {
+    background-color: #ddd;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.seat-selector button:hover {
+    background-color: #ccc;
+}
+
+.seat-selector button:active {
+    background-color: #bbb;
+}
+
+.seat-selector button:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+}
+
+
+.seat.selected {
+    border: 2px solid yellow;
+    transform: scale(1.15);
+    transition: transform 0.3s, border 0.3s;
+    background-color: none; /* Replace with the initial color of seats */
+    outline: none;
+    box-shadow: none;
+}
+
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #4CAF50; /* or your desired color */
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #45a049; /* a slightly different green for a hover effect */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
